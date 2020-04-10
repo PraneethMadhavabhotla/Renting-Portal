@@ -1,0 +1,68 @@
+<?php
+session_start();
+?>
+<?php
+$var1=$_SESSION['flat'];
+$servername="localhost";
+$uname="root";
+$pwd="";
+$database="dbms1";
+$conn=mysqli_connect($servername,$uname,$pwd,$database);
+$cmd="select *from home3 where flat='$var1';";
+$result=mysqli_query($conn,$cmd);
+while($row=mysqli_fetch_assoc($result))
+{}
+?>
+<html>
+<head>
+<style>
+.img
+{
+background-image:url(../img/grand.jpg);
+height:120vh;
+background-size:cover;
+}
+.content
+{
+	height:460px;
+	width:750px;
+	position:fixed;
+	font-family:verdana;
+	text-align:center;
+	left:290px;
+	top:120px;
+	background:rgba(0,0,0,0.3);
+	box-shadow:0 5px 15px rgba(0,0,0,0.5);
+	color:#FAEBD7;
+    font-size:20px;	
+}
+.box
+{
+	height:100px;
+	width:900px;
+	position:absolute;
+	text-align:center;
+	background:rgba(47,79,79,0.5);
+	left:210px;
+	color:#F5DEB3;
+	font-size:30px;
+}
+</style>
+</head>
+<body>
+<div class="img">
+<div class="box">
+<h2>FLAT FINDER</h2>
+<div class="content">
+<h1>Name:<?php echo "<p>".$row['name']."</p>" ?></h1>
+<br>
+<h2>Number:<?php echo "<p>".$row['number']."</p>" ?></h2>
+<br>
+<h3>Rent:<?php echo "<p>".$row['price']."</p>" ?></h3>
+<br>
+</div>
+</div>
+</div>
+
+</body>
+</html>

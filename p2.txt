@@ -1,0 +1,121 @@
+<html>
+<head>
+<style>
+.img
+{
+background-image:url(../img/grand.jpg);
+height:120vh;
+background-size:cover;
+}
+.content
+{
+	height:460px;
+	width:750px;
+	position:fixed;
+	font-family:verdana;
+	text-align:center;
+	left:290px;
+	top:120px;
+	background:rgba(0,0,0,0.3);
+	box-shadow:0 5px 15px rgba(0,0,0,0.5);
+	color:#FAEBD7;
+    font-size:20px;	
+}
+.content p
+{	
+font-size:30px;
+}
+.box
+{
+	height:100px;
+	width:900px;
+	position:absolute;
+	text-align:center;
+	background:rgba(47,79,79,0.5);
+	left:210px;
+	color:#F5DEB3;
+	font-size:30px;
+}
+.content select[name=area],
+.content select[name=flat]
+{
+	border:none;
+	background:transparent;
+	border-bottom:2px solid #fff;
+	text-align:center;
+	font-family:verdana;
+	font-size:20px;
+}
+.content select option,
+.content select option
+{
+	border:none;
+	background:transparent;
+}
+.content button
+{
+height:30px;
+color:black;
+border:none;
+background-color:#FFF8DC;
+border-radius:70px;
+cursor:pointer;
+font-size:18px;
+}
+.content button:hover
+{
+
+box-shadow:0 5px 15px rgba(0,0,0,0.9);
+}
+.content select
+{
+	background:#808080;
+	color:black;
+	padding:10px;
+	width:250px;
+	height:50px;
+	border:none;
+	font-size:20px;
+	box-shadow:0 5px 25px rgba(0,0,0,0.5);
+	-webkit-appearance:button;
+	outline:none;
+	text-align:center;
+}
+</style>
+</head>
+<body>
+<div class="img">
+<div class="box">
+<h2>FLAT FINDER</h2>
+<div class="content">
+<form action="praneeth1.php" method="GET">
+<br>
+<h1>Find your dream flat here!!!!!</h1>
+<p>Area:</p>
+<select name="area">
+<option value="Jalandhar">Jalandhar</option>
+<option value="Lawgate">Law Gate</option>
+<option value="Phagwara">Phagwara</option>
+<option value="G.T Road">G.T Road</option>
+<option value="Vishal Mart">Vishal Mart</option>
+</select>
+<p>Flat Specifications:</p>
+<select name="flat">
+<option value="2 BHK">2 BHK</option>
+<option value="3 BHK">3 BHK</option>
+<option value="4 BHK">4 BHK</option>
+</select>
+<br>
+<br>
+<button>Submit</button>
+</form>
+<?php
+$var=$_GET['flat'];
+$_SESSION['flat']=$var;
+echo $var;
+?>
+</div>
+</div>
+
+</body>
+</html>
